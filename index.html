@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ride Sharing - Login & Register</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style> 
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: url('images/1_tsToDy7vp-D6MGlAq1izOw.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+  background: rgba(255, 255, 255, 0.95);
+  width: 100%;
+  max-width: 400px;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  margin-top: 350px; 
+}
+
+    .tabs {
+      display: flex;
+      margin-bottom: 20px;
+    }
+
+    .tabs label {
+      flex: 1;
+      text-align: center;
+      padding: 12px;
+      cursor: pointer;
+      background: #e0e0e0;
+      border-radius: 8px 8px 0 0;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    input[type="radio"] {
+      display: none;
+    }
+
+    #login:checked ~ .tabs label[for="login"],
+    #register:checked ~ .tabs label[for="register"] {
+      background: #4CAF50;
+      color: white;
+    }
+
+    form {
+      display: none;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    #login:checked ~ .form-container .login-form,
+    #register:checked ~ .form-container .register-form {
+      display: block;
+    }
+
+    form input {
+      width: 100%;
+      padding: 14px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+    }
+
+    form button {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #4CAF50, #43A047);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      box-shadow: 0 0 0 transparent;
+    }
+
+    form button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 12px rgba(76, 175, 80, 0.5);
+      background: linear-gradient(135deg, #43A047, #388E3C);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 25px 20px;
+      }
+
+      form input, form button {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <input type="radio" id="login" name="tab" checked>
+    <input type="radio" id="register" name="tab">
+
+    <div class="tabs">
+      <label for="login">Login</label>
+      <label for="register">Register</label>
+    </div>
+
+    <div class="form-container">
+      <!-- Login Form -->
+      <form class="login-form">
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+      </form>
+
+      <!-- Register Form -->
+      <form class="register-form">
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <input type="password" placeholder="Confirm Password" required>
+        <button type="submit">Register</button>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
